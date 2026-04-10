@@ -330,11 +330,7 @@ ASALocalRun/
 .mfractor/
 
 #ignore all cloned folders
-togetherbytaxi_identity/
-togetherbytaxi_integrationtests/
-togetherbytaxi_order/
-togetherbytaxi_signalr/
-togetherbytaxi_ui/
+InterviewTraining_Identity/
 
 #ignore description file
 описание.txt
