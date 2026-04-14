@@ -9,7 +9,7 @@
 ---
 
 ## Адреса сайта:
- * interview-training.site
+ * https://interview-training.site
  * тренировочные-собеседования.ру
 ---
 
