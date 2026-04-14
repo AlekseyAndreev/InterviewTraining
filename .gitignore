@@ -331,6 +331,7 @@ ASALocalRun/
 
 #ignore all cloned folders
 InterviewTraining_Identity/
+InterviewTraining_Api/
 
 #ignore description file
 описание.txt
@@ -340,3 +341,5 @@ skills.txt
 описание-доменные-модели.txt
 interview.txt
 skills-code.txt
+.envinterviewtrainingauth
+.envinterviewtrainingapi

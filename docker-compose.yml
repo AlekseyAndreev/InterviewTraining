@@ -1,0 +1,48 @@
+services:
+  interviewtrainingauth:
+    image: ${DOCKER_REGISTRY}interviewtrainingauth
+    build:
+      context: ./InterviewTraining_Identity
+      dockerfile: SevSharks.Identity.WebUI/Dockerfile
+    env_file:
+      - .envinterviewtrainingauth
+    ports:
+      - "5107:5107"
+      - "5108:5108"
+    restart: always
+    volumes:
+      - ../certificates_for_interview_training_site_docker:/root/certificates/:ro
+  interviewtrainingapi:
+    image: ${DOCKER_REGISTRY}interviewtrainingapi
+    build:
+      context: ./InterviewTraining_Api
+      dockerfile: src/InterviewTraining.Api/Dockerfile
+    env_file:
+      - .envinterviewtrainingapi
+    ports:
+      - "53383:53383"
+      - "53384:53384"
+    restart: always
+    depends_on:
+      - interviewtrainingauth
+    volumes:
+      - ../certificates_for_interview_training_site_docker:/root/certificates/:ro
+  interviewtrainingwebspa:
+    image: ${DOCKER_REGISTRY}interviewtrainingwebspa
+    build:
+      context: ./InterviewTraining_Ui
+      dockerfile: Dockerfile
+      args:
+        configuration: docker
+    ports:
+      - "8182:443"
+      - "8183:80"
+    restart: always
+    volumes:
+      - ../certificates_for_interview_training_site_docker:/etc/nginx/ssl/:ro
+    depends_on:
+      - interviewtrainingauth
+networks:
+  default:
+    name: local
+    external: true
