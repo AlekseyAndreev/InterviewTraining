@@ -332,6 +332,8 @@ ASALocalRun/
 #ignore all cloned folders
 InterviewTraining_Identity/
 InterviewTraining_Api/
+InterviewTraining_Identity_Api_Migrator/
+InterviewTraining_Ui/
 
 #ignore description file
 описание.txt
@@ -343,3 +345,4 @@ interview.txt
 skills-code.txt
 .envinterviewtrainingauth
 .envinterviewtrainingapi
+.envinterviewtrainingmigrator
