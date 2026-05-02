@@ -77,17 +77,6 @@ services:
     restart: always
     depends_on:
       - elasticsearch
-  fluentbit:
-    image: ${DOCKER_REGISTRY}interviewtrainingfluentbit
-    build:
-      context: ./fluent-bit
-      dockerfile: Dockerfile
-    restart: always
-    depends_on:
-      - elasticsearch
-    volumes:
-      - /var/lib/docker/containers:/var/lib/docker/containers:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
 
 volumes:
   elasticsearch_data:
